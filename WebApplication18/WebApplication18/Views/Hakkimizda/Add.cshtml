@@ -1,0 +1,51 @@
+﻿
+@{
+    Layout = null;
+}
+@model WebApplication18.Entities.Hakkimizda
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>HAKKIMIZDA EKLE</title>
+</head>
+<body>
+    <div style="margin-left:600px"><h1>HAKKIMIZDA DURUM EKLEME SAYFASI</h1></div>
+   
+    @using (Html.BeginForm("Add", "Hakkimizda", FormMethod.Post))
+    {
+        <div style="margin-left:750px">
+    <table>
+        <tr>
+            <td>METİN EKLE</td>
+            <td>
+                @*@Html.TextBoxFor(a => a.Metin)*@
+                <input type="text" class="form-control" name="metin" required=" " />
+            </td>
+        </tr>
+
+
+
+
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+                <input type="submit" value="METİN EKLE" />
+            </td>
+        </tr>
+    </table>
+            </div>
+
+
+        }
+    <div style="margin-left:700px">
+        <img src="~/resimler/hakkımızda2.png">
+    </div>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+
+    <div style="margin-left:850px; color:blue">
+        <h1>DEPOLAR</h1>
+    </div>
+
+    <div style="margin-left:100px">
+        <img src="~/resimler/a3.jpg"/>
+        </div>>
+
+    <a href="@Url.Action("Add","Depo")">DEPO EKLE</a>
+
+    <br /><br />
+
+
+    <div style="margin-left:100px" >
+
+    <table border="1" width="1700px" height="500px">
+        <tr>
+            <th>ÜRÜN ADI</th>
+            <th>DEPO NUMARASI</th>
+            <th>DEPOADRESİ</th>
+            <th>SEÇİMLER</th>
+
+        </tr>
+
+        @foreach (var depo in ViewBag.depolar)
+        {
+            <tr>
+                <td>@depo.urunadi</td>
+                <td>@depo.depono</td>
+                <td>@depo.depoadres</td>
+
+                <td>
+                    <a href="@Url.Action("Edit","Depo", new { id = depo.Id })">Düzenle</a>
+                    |
+                    <a href="@Url.Action("Delete","Depo", new { id = depo.Id })" onclick="return confirm('Silmek istediğinize emin misiniz?')">Sil</a>
+                </td>
+            </tr>
+        }
+
+    </table>
+        </div>
+    <br/><br /><br />
+    <div style="margin-left:1300px">
+    <button>DEPO EKLE</button>
+    </div>
+
+    <div style="margin-left:100px">
+        <img src=""/>
+        
+    </div>
+</body>
+</html>

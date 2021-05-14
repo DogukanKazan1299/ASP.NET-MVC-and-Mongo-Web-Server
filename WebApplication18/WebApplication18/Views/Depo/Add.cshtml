@@ -1,0 +1,69 @@
+﻿
+@{
+    Layout = null;
+}
+@model WebApplication18.Entities.Depo
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DEPO EKLE</title>
+</head>
+<body>
+    <div style="margin-left:700px"><h1>DEPO EKLEME SAYFASI</h1></div>
+   
+    @using (Html.BeginForm("Add", "Depo", FormMethod.Post))
+    {
+        <div style="margin-left:700px">
+    <table>
+        <tr>
+            <td>ÜrünAdı</td>
+            <td>
+                @*@Html.TextBoxFor(a => a.urunadi)*@
+                <input type="text" class="form-control" name="urunadi" required=" " />
+            </td>
+        </tr>
+
+
+
+
+        <tr>
+            <td>Depono</td>
+            <td>
+                @Html.TextBoxFor(a => a.depono)
+            </td>
+        </tr>
+
+        <tr>
+            <td>Depo Adres</td>
+            <td>
+                @Html.TextBoxFor(a => a.depoadres)
+            </td>
+        </tr>
+
+
+
+
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+                <input type="submit" value="Depo Ekle" />
+            </td>
+        </tr>
+    </table>
+
+            </div>
+
+        }
+
+    <div style="margin-left:700px">
+        <img src="~/resimler/depo ekle.png"/>
+    </div>
+
+
+
+
+</body>
+</html>

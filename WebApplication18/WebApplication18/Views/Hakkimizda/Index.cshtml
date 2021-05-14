@@ -1,0 +1,59 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div style="margin-left:700px; color:blue"><h1>HAKKIMIZDA SAYFASI</h1></div>
+    <div style="margin-left:550px">
+        <img src="~/resimler/about us.png"/>
+    </div>
+    <a href="@Url.Action("Add","Hakkimizda")">EKLE</a>
+
+    <br /><br />
+    <div style="margin-left:300px">
+    <table border="1">
+        <tr>
+            <th>METİN</th>
+            
+            <th>SEÇENEKLER</th>
+
+        </tr>
+
+        @foreach (var hakkimizda in ViewBag.hakkimizdalar)
+        {
+            <tr>
+                <td>@hakkimizda.Metin</td>
+                
+
+                <td>
+                    <a href="@Url.Action("Edit","Hakkimizda", new { id = hakkimizda.Id })">Düzenle</a>
+                    |
+                    <a href="@Url.Action("Delete","Hakkimizda", new { id = hakkimizda.Id })" onclick="return confirm('Silmek istediğinize emin misiniz?')">Sil</a>
+                </td>
+            </tr> 
+        }
+
+    </table>
+        </div>
+    <br/><br /><br />
+
+    <div style="margin-left:1000px">
+
+        <button>HAKKIMIZDA EKLE</button>
+
+    </div>
+
+    <div style="margin-left:450px">
+        <img src="~/resimler/hakkımızda.png"/>
+        <img src="~/resimler/hakkımızda2.png"/>
+    </div>
+</body>
+</html>

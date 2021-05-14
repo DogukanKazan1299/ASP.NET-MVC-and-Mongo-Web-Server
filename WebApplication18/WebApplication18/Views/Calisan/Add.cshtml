@@ -1,0 +1,80 @@
+﻿
+@{
+    Layout = null;
+}
+@model WebApplication18.Entities.Calisan
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ÇALIŞAN EKLEME</title>
+</head>
+<body>
+   
+    @using (Html.BeginForm("Add", "Calisan", FormMethod.Post))
+    {
+        <div style="margin-left:700px"><h1>ÇALIŞAN EKLEME SAYFASI</h1></div>
+        <div style="margin-left:700px">
+    <table width="300px" height="600px">
+        <tr>
+            
+            <td>ELEMAN ADI=</td>
+            <td>
+                @*@Html.TextBoxFor(a => a.Ad)*@
+                <input type="text" class="form-control" name="AD" required=" " />
+            </td>
+        </tr>
+
+
+
+
+        <tr>
+            <td>SOYADI=</td>
+            <td>
+                @*@Html.TextBoxFor(a => a.Soyad)*@
+                <input type="text" class="form-control" name="soyad" required=" " />
+            </td>
+        </tr>
+
+
+
+
+        <tr>
+            <td>ŞİFRESİ=</td>
+            <td>
+                @*@Html.PasswordFor(a => a.Sifre)*@
+                <input type="text" class="form-control" name="Sifre" required=" " />
+            </td>
+        </tr>
+
+
+        <tr>
+            <td>DURUM=</td>
+            <td>
+                @Html.CheckBoxFor(a => a.Status)
+            </td>
+        </tr>
+
+
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+                <input type="submit" value="Yeni Çalışan Ekle"/>
+                </td>
+            </tr>
+        </table>
+            </div>
+
+
+        }
+    <div style="margin-left:700px">
+        <img src="~/resimler/9189309_worker-icon-add-employee-icon-png-png-download.png"/>
+    </div>
+
+
+
+
+</body>
+</html>

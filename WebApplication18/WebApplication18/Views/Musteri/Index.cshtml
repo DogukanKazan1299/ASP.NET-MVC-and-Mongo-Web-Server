@@ -1,0 +1,84 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    <label>MÜŞTERİ ARA</label>
+    @Html.Editor("ara")
+    <input type="submit" value="Ara" />
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>MÜŞTERİ</title>
+</head>
+<body>
+    <div style="margin-left:700px; color:blue"><h1>MÜŞTERİLER SAYFASI</h1></div>
+
+
+
+    <div style="margin-left:100px">
+        <img src="~/resimler/b3.jpg" />
+    </div>
+
+   
+
+    <a href="@Url.Action("Add","Musteri")">MÜŞTERİ EKLE</a>
+
+    <br /><br />
+    <div style="margin-left:100px">
+
+        <table border="1" width="1700px" height="500px">
+            <tr>
+                <th>AD</th>
+                <th>SOYAD</th>
+                <th>ÜCRET</th>
+                <th>ADRES</th>
+                <th>SEÇENEKLER</th>
+
+            </tr>
+
+            @foreach (var musteri in ViewBag.musteriler)
+            {
+                <tr>
+                    <td>@musteri.Ad</td>
+                    <td>@musteri.Soyad</td>
+                    <td>@musteri.Ucret</td>
+                    <td>@musteri.Adres</td>
+                    <td>
+                        <a href="@Url.Action("Edit","Musteri", new { id = musteri.Id })">Düzenle</a>
+                        |
+                        <a href="@Url.Action("Delete","Musteri", new { id = musteri.Id })" onclick="return confirm('Silmek istediğinize emin misiniz?')">Sil</a>
+                    </td>
+                </tr>
+            }
+
+        </table>
+
+       
+        
+
+        
+
+    </div>
+    <br /><br /><br />
+
+    <div style="margin-left:1000px">
+        <button>YENİ MÜŞTERİ EKLE</button>
+    </div>
+    <div style="margin-left:100px">
+        <img src="~/resimler/b4.jpg" />
+    </div>
+
+
+
+
+</body>
+</html>

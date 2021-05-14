@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>MAAŞLAR</title>
+</head>
+<body>
+    <div style="margin-left:700px; color:blue;"><h1>MAAŞLAR SAYFASI</h1></div>
+    <div style="margin-left:100px">
+        <img src="~/resimler/b1.jpg" />
+        <img src="~/resimler/b2.jpg" />
+    </div>
+    <a href="@Url.Action("Add","Maas")">MAAŞ GİRDİSİ</a>
+
+    <br/><br />
+    <div style="margin-left:100px">
+
+    <table border="1" width="1700px" height="500px">
+        <tr>
+            <th>ÇALIŞANİD</th>
+            <th>ÇALIŞANMAAŞ</th>
+            <th>SEÇENEKLER</th>
+
+        </tr>
+
+        @foreach (var maas in ViewBag.maaslar)
+        {
+    <tr>
+        <td>@maas.Calisanid</td>
+        <td>@maas.Calisanmaas</td>
+        
+        <td>
+            <a href="@Url.Action("Edit","Maas", new { id = maas.Id })">Düzenle</a>
+            |
+            <a href="@Url.Action("Delete","Maas", new { id = maas.Id })" onclick="return confirm('Silmek istediğinize emin misiniz?')">Sil</a>
+            </td>
+        </tr>
+            }
+
+</table>
+        </div>
+    <br/><br /><br />
+
+    <div style="margin-left:1100px">
+        <button>MAAŞ EKLE</button>
+    </div>
+
+</body>
+</html>

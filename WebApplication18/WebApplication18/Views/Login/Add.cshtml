@@ -1,0 +1,73 @@
+﻿
+@{
+    Layout = null;
+}
+@model WebApplication18.Entities.Login
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>LOGIN EKLE</title>
+</head>
+<body>
+    <div style="margin-left:700px"><h1>LOGIN EKLEME SAYFASI</h1></div>
+    @using (Html.BeginForm("Add", "Login", FormMethod.Post))
+    {
+        <div style="margin-left:700px">
+    <table>
+        <tr>
+            <td>Ad</td>
+            <td>
+                @*@Html.TextBoxFor(a => a.Ad)*@
+                <input type="text" class="form-control" name="AD" required=" " />
+            </td>
+        </tr>
+
+
+
+
+        <tr>
+            <td>Soyad</td>
+            <td>
+                @*@Html.TextBoxFor(a => a.Soyad)*@
+                <input type="text" class="form-control" name="SOYAD" required=" " />
+            </td>
+        </tr>
+
+
+
+
+        <tr>
+            <td>Sifre</td>
+            <td>
+                @*@Html.PasswordFor(a => a.Sifre)*@
+                <input type="text" class="form-control" name="sifre" required=" " />
+            </td>
+        </tr>
+
+
+       
+
+
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+                <input type="submit" value="Add Login"/>
+                </td>
+            </tr>
+        </table>
+            </div>
+
+
+        }
+    <div style="margin-left:800px">
+        <img src="~/resimler/addlogin.png"/>
+    </div>
+
+
+
+
+</body>
+</html>

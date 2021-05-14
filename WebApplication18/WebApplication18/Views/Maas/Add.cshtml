@@ -1,0 +1,64 @@
+﻿
+@{
+    Layout = null;
+}
+@model WebApplication18.Entities.Maas
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>MAAŞ GİRİŞİ</title>
+</head>
+<body>
+   <div style="margin-left:700px"><h1>MAAŞ GİRDİSİ SAYFASI</h1></div>
+    @using (Html.BeginForm("Add", "Maas", FormMethod.Post))
+    {
+<div style="margin-left:700px">
+    <table>
+        <tr>
+            <td>ÇALIŞAN_id</td>
+            <td>
+                @*@Html.TextBoxFor(a => a.Calisanid)*@
+                <input type="text" class="form-control" name="Calisanid" required=" " />
+            </td>
+        </tr>
+
+
+
+
+        <tr>
+            <td>ÇALIŞAN_maaş</td>
+            <td>
+                @*@Html.TextBoxFor(a => a.Calisanmaas)*@
+                <input type="text" class="form-control" name="Calisanmaas" required=" " />
+            </td>
+        </tr>
+
+
+
+
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+                <input type="submit" value="Kaydet" />
+            </td>
+        </tr>
+    </table>
+</div>
+
+
+
+        }
+    <br/><br /><br />
+
+    <div style="margin-left:300px">
+        <img src="~/resimler/add maaş.png"/>
+    </div>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/_Layout.cshtml"; 
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div style="margin-left:800px; color:blue"><h1>LOGIN SAYFASI</h1></div>
+    <div style="margin-left:100px">
+        <img src="~/resimler/a7.jpg"/>
+    </div>
+    <a href="@Url.Action("Add","Login")">LOGIN</a>
+
+    <br/><br />
+    <div style="margin-left:100px">
+    <table border="1" width="1700px" height="300px">
+        <tr>
+            <th>AD</th>
+            <th>SOYAD</th>
+            <th>ŞİFRE</th>
+            
+            <th>SEÇENEKLER</th>
+
+        </tr>
+
+        @foreach (var login in ViewBag.loginler)
+        {
+    <tr>
+        <td>@login.Ad</td>
+        <td>@login.Soyad</td>
+        <td>@login.Sifre</td>
+      
+        <td>
+            <a href="@Url.Action("Edit","Login", new { id = login.Id })">Düzenle</a>
+            |
+            <a href="@Url.Action("Delete","Login", new { id = login.Id })" onclick="return confirm('Silmek istediğinize emin misiniz?')">Sil</a>
+            </td>
+        </tr>
+            }
+
+</table>
+        </div>
+    <br/><br /><br />
+
+    <div style="margin-left:1200px">
+    <button>LOGIN GİRİŞİ</button>
+    </div>
+</body>
+</html>

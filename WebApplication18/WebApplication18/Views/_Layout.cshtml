@@ -1,0 +1,44 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>YENİ ANASAYFA</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/YeniAnasayfa/Index/">MVC MONGO PROJECT</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="/Anasayfa/Index/">ANASAYFA</a></li>
+                <li><a href="/Calisan/Index/">ÇALIŞANLAR</a></li>
+                <li><a href="/Depo/Index/">DEPOLAR</a></li>
+                <li><a href="/Hakkimizda/Index/">HAKKIMIZDA</a></li>
+                <li><a href="/İş/Index/">İŞLER</a></li>
+                <li><a href="/Login/Index/">LOGIN</a></li>
+                <li><a href="/Maas/Index/">MAAŞ</a></li>
+                <li><a href="/Musteri/Index/">MÜŞTERİLER</a></li>
+                <li><a href="/Raporlar/Index/">RAPORLAR</a></li>
+                <li><a href="/LogInYap/Index/">LOGOUT</a></li>
+                
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container" style="margin-left:100px">
+        @RenderBody()
+    </div>
+
+</body>
+</html>

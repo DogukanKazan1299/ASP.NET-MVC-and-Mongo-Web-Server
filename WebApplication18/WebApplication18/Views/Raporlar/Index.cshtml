@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>RAPORLAR</title>
+</head>
+<body>
+    <div style="margin-left:500px; color:blue"><h1>RAPORLAR SAYFASI</h1></div>
+    <a href="@Url.Action("Add","Raporlar")">RAPOR EKLE</a>
+
+    <br/><br />
+    <div style="margin-left:0">
+    <table border="1" width="1700px" height="200px">
+        <tr>
+            <th>NEDEN</th>
+            <th>MUSTERİ_id</th>
+            <th>MUSTERİ_yorum</th>
+            
+            <th>SEÇENEKLER</th>
+
+        </tr>
+
+        @foreach (var raporlar in ViewBag.raporlar)
+        {
+    <tr>
+        <td>@raporlar.Neden</td>
+        <td>@raporlar.Musteriid</td>
+        <td>@raporlar.Musteriyorum</td>
+        
+        <td>
+            <a href="@Url.Action("Edit","Raporlar", new { id = raporlar.Id })">Düzenle</a>
+            |
+            <a href="@Url.Action("Delete","Raporlar", new { id = raporlar.Id })" onclick="return confirm('Silmek istediğinize emin misiniz?')">Sil</a>
+            </td>
+        </tr>
+            }
+
+</table>
+        </div>
+    <br/><br /><br />
+
+    <div style="margin-left:0">
+        <button>RAPOR EKLE</button>
+    </div>
+
+    <div style="margin-left:0">
+        <img src="~/resimler/b5.jpg"/>
+        <img src="~/resimler/"/>
+    </div>
+</body>
+</html>

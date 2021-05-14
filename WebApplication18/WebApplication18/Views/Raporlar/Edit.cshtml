@@ -1,0 +1,69 @@
+﻿
+@{
+    Layout = null;
+}
+@model WebApplication18.Entities.Raporlar
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DÜZENLE</title>
+</head>
+<body>
+    <div style="margin-left:700px"><h1>RAPOR DÜZENLE</h1></div>
+   
+    @using (Html.BeginForm("Edit", "Raporlar", FormMethod.Post))
+    {
+        <div style="margin-left:700px">
+    <table>
+        <tr>
+            <td>Neden</td>
+            <td>
+                @Html.TextBoxFor(a => a.Neden)
+            </td>
+        </tr>
+
+
+
+
+        <tr>
+            <td>Müşteri_id</td>
+            <td>
+                @Html.TextBoxFor(a => a.Musteriid)
+            </td>
+        </tr>
+
+
+
+
+        <tr>
+            <td>Müşteri_yorum</td>
+            <td>
+                @Html.TextBoxFor(a => a.Musteriyorum)
+            </td>
+        </tr>
+
+
+        
+
+
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+                <input type="submit" value="Düzenle" />
+                @Html.HiddenFor(a => a.Id)
+            </td>
+            </tr>
+        </table>
+
+            </div>
+
+        }
+
+
+
+
+</body>
+</html>

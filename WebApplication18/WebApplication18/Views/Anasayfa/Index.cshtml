@@ -1,0 +1,76 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ANASAYFA</title>
+</head>
+<body>
+    <div style="color:blue; font-size:25px; margin-left:800px">ANASAYFA</div>
+    
+    <div style="float:left; margin-left:90px; margin-top:15px">
+        <img src="~/resimler/head3.jpeg">
+
+    </div>
+    <div style="margin-top:50px; float:left" ></div>
+
+    <div>
+
+        <br />
+        <div style="color:black; font-size : 14px; margin-left:90px; background-color:black; float:left">
+
+            <table border="1" width="1700" height="70">
+
+
+                <tr>
+
+                    <th><a href="@Url.Action("Index","Calisan")">ÇALIŞANLAR</a></th>
+                    <th><a href="@Url.Action("Index","Depo")">DEPO</a></th>
+                    <th><a href="@Url.Action("Index","Hakkimizda")">HAKKIMIZDA</a></th>
+                    <th><a href="@Url.Action("Index","İş")">İŞLER</a></th>
+                    <th><a href="@Url.Action("Index","Login")">LOGIN</a></th>
+                    <th><a href="@Url.Action("Index","Maas")">MAAŞ</a></th>
+                    <th><a href="@Url.Action("Index","Musteri")">MÜŞTERİ</a></th>
+                    <th><a href="@Url.Action("Index","Raporlar")">RAPORLAR</a></th>
+
+
+
+                </tr>
+
+
+
+            </table>
+
+        </div>
+        <br />
+        
+        <div style="float:left; margin-left:90px; margin-top:15px">
+            <img src="~/resimler/head1.jpg">
+
+        </div>
+
+
+    </div>
+
+    <div style="margin-left:90px; margin-top:10px; float:left">
+
+        MERHABA ŞİRKETİM WEB SERVERIMIZA HOŞ GELDİNİZ.BU SİTE ASP.NET ve MONGODB İLE TASARLANMIŞTIR.
+        BİTİRME PROJESİ II DÖNEM ..
+
+    </div>
+    <br />
+    
+    <div style="float:left; background-color:#0094ff; margin-left:90px; margin-top:10px">
+        COPYRIGT @@ 2021 DOĞUKAN KAZAN
+    </div>
+
+</body>
+</html>
+
+

@@ -1,0 +1,52 @@
+﻿
+@{
+    Layout = null;
+}
+@model WebApplication18.Entities.Hakkimizda
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>HAKKIMIZDA DÜZENLE</title>
+</head>
+<body>
+   <div style="margin-left:700px"><h1>HAKKIMIZDA ALANI GÜNCELLEME</h1></div>
+    @using (Html.BeginForm("Add", "Hakkimizda", FormMethod.Post))
+    {
+        <div style="margin-left:800px">
+    <table>
+        <tr>
+            <td>METİN</td>
+            <td>
+                @Html.TextBoxFor(a => a.Metin)
+            </td>
+        </tr>
+
+
+
+
+
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+                <input type="submit" value="HAKKIMIZDA GÜNCELLE" />
+            </td>
+        </tr>
+    </table>
+
+            </div>
+
+        }
+    <div style="margin-left:700px">
+
+        <img src="~/resimler/hakkımızdaedit.png"/>
+
+    </div>
+
+
+
+
+</body>
+</html>

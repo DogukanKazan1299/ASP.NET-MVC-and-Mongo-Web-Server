@@ -1,0 +1,95 @@
+﻿@using WebApplication18.Models;
+@using PagedList;
+@using PagedList.Mvc;
+@model PagedList.IPagedList<CalisanModel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/_Layout.cshtml";
+}
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div style="margin-left:700px; color:blue">
+        <h1>ÇALIŞANLAR SAYFAMIZ</h1>
+    </div>
+
+    <div style="margin-left:50px">
+
+        <img src="~/resimler/a2.jpg">
+
+    </div>
+
+
+
+
+
+
+
+    <a href="@Url.Action("Add","Calisan")">ÇALIŞAN EKLE</a>
+
+    <br /><br />
+
+          <div style="margin-left:50px">
+
+              <table border="1" width="1700" height="500">
+
+                  <tr>
+                      <th>AD</th>
+                      <th>SOYAD</th>
+                      <th>ŞİFRE</th>
+                      <th>DURUM</th>
+                      <th>SEÇENEKLER</th>
+
+
+                  </tr>
+
+
+                  @foreach (var calisan in ViewBag.calisanlar)
+                  {
+                      <tr>
+                          <td>@calisan.Ad</td>
+                          <td>@calisan.Soyad</td>
+                          <td>@calisan.Sifre</td>
+                          <td>@calisan.Status</td>
+                          <td>
+                              <a href="@Url.Action("Edit","Calisan", new { id = calisan.Id })">DÜZENLE</a>
+                              |
+                              <a href="@Url.Action("Delete","Calisan", new { id = calisan.Id })" onclick="return confirm('Silmek istediğinize emin misiniz?')">SİL</a>
+                          </td>
+                      </tr>
+                  }
+
+
+
+              </table>
+
+          
+              
+
+
+
+              <div style="margin:20px 0 0 1200px">
+                  <button class="btn btn-danger">YENİ ÇALIŞAN EKLEME BUTONU</button>
+              </div>
+
+              <br /><br /><br /><br />
+
+          </div>
+
+    <div style="margin-left:50px">
+        <img src="~/resimler/a1.jpg">
+    </div>
+
+
+
+</body>
+</html>

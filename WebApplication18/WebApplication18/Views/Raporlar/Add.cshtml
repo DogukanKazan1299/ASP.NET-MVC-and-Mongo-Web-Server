@@ -1,0 +1,69 @@
+﻿
+@{
+    Layout = null;
+}
+@model WebApplication18.Entities.Raporlar
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>RAPOR EKLE</title>
+</head>
+<body>
+    <div style="margin-left:700px"><h1>RAPOR EKLEME SAYFASI</h1></div>
+   
+    @using (Html.BeginForm("Add", "Raporlar", FormMethod.Post))
+    {
+        <div style="margin-left:700px">
+    <table>
+        <tr>
+            <td>Neden</td>
+            <td>
+                @*@Html.TextBoxFor(a => a.Neden)*@
+                <input type="text" class="form-control" name="neden" required=" " />
+            </td>
+        </tr>
+
+
+
+
+        <tr>
+            <td>Müşteri_id</td>
+            <td>
+                @Html.TextBoxFor(a => a.Musteriid)
+            </td>
+        </tr>
+
+
+
+
+        <tr>
+            <td>Müşteri_yorum</td>
+            <td>
+                @Html.TextBoxFor(a => a.Musteriyorum)
+            </td>
+        </tr>
+
+
+        
+
+
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+                <input type="submit" value="RAPOR EKLE"/>
+                </td>
+            </tr>
+        </table>
+            </div>
+
+
+        }
+
+
+
+
+</body>
+</html>

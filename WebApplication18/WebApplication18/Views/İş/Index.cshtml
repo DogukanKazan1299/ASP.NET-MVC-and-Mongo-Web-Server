@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>İŞ SAYFASI</title>
+    
+</head>
+<body>
+    <div style="margin-left:700px; color:blue"><h1>İŞLER SAYFASI</h1></div>
+    <div style="margin-left:100px">
+        <img src="~/resimler/a4.jpg"/>
+    </div>
+    <a href="@Url.Action("Add","İş")">İŞ EKLE</a>
+    <br/>
+
+    <div style="margin-left:100px" >
+    <table border="1" width="1700px" height="500px">
+        <tr>
+            <th>Ürünadı</th>
+            <th>Satistoplam</th>
+            <th>Ucret</th>
+            <th>Seçenekler</th>
+            </tr>
+
+        @foreach(var iş in ViewBag.işler)
+        {
+    <tr>
+        <td>@iş.Urunadi</td>
+        <td>@iş.Satistoplam</td>
+        <td>@iş.Ucret</td>
+        <td>
+            <a href="@Url.Action("Edit","İş", new { id=iş.Id })">Edit</a>
+            |
+            <a href="@Url.Action("Delete","İş", new { id=iş.Id })" onclick="return confirm('Silmek istediğinize emin misiniz?')">Delete</a>
+            </td>
+        </tr>
+
+
+
+        }
+        </table>
+        </div>
+    <br/><br /><br />
+
+    <div style="margin-left:1200px">
+        <button>İŞLER BUTONU</button>
+    </div>
+
+    <div style="margin-left:100px">
+        <img src="~/resimler/a5.jpg"/>
+    </div>
+</body>
+</html>

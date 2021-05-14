@@ -1,0 +1,81 @@
+﻿
+@{
+    Layout = null;
+}
+@model WebApplication18.Entities.Musteri
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>MÜŞTERİ EKLE</title>
+</head>
+<body>
+    <div style="margin-left:700px"><h1>MÜŞTERİ EKLEME SAYFASI</h1></div>
+   
+    @using (Html.BeginForm("Add", "Musteri", FormMethod.Post))
+    {
+        <div style="margin-left:700px">
+    <table>
+        <tr>
+            <td>Ad</td>
+            <td>
+               @*@Html.TextBoxFor(a => a.Ad)*@
+                <input type="text" class="form-control" name="AD" required=" "/>
+               
+            </td>
+        </tr>
+
+
+
+
+        <tr>
+            <td>Soyad</td>
+            <td>
+                @*@Html.TextBoxFor(a => a.Soyad)*@
+                <input type="text" class="form-control" name="SOYAD" required="" />
+            </td>
+        </tr>
+
+
+
+
+        <tr>
+            <td>Ucret</td>
+            <td>
+                @Html.TextBoxFor(a => a.Ucret)
+            </td>
+        </tr>
+
+
+        <tr>
+            <td>Adres</td>
+            <td>
+                @Html.TextBoxFor(a => a.Adres)
+            </td>
+        </tr>
+
+
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+                <input type="submit" value="MüşteriEkle"/>
+                </td>
+            </tr>
+        </table>
+</div>
+
+
+        }
+    <br/><br /><br />
+<div style="margin-left:700px">
+    <img src="~/resimler/müşteri ekle.png" />
+    <img src="~/resimler/müşteriekle2.png" />
+</div>
+
+
+
+
+</body>
+</html>

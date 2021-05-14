@@ -1,0 +1,69 @@
+﻿
+@{
+    Layout = null;
+}
+@model WebApplication18.Entities.İş
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>İŞ DÜZENLE</title>
+</head>
+<body>
+    <div style="margin-left:700px"><h1>İŞ DÜZENLEME SAYFASI</h1></div>
+   
+    @using (Html.BeginForm("Edit", "İş", FormMethod.Post))
+    {
+        <div style="margin-left:700px">
+    <table>
+        <tr>
+            <td>ÜrünAd</td>
+            <td>
+                @Html.TextBoxFor(a => a.Urunadi)
+            </td>
+        </tr>
+
+
+
+
+        <tr>
+            <td>Satış</td>
+            <td>
+                @Html.TextBoxFor(a => a.Satistoplam)
+            </td>
+        </tr>
+
+
+
+        <tr>
+            <td>Ucret</td>
+            <td>
+                @Html.TextBoxFor(a => a.Ucret)
+            </td>
+        </tr>
+
+
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+                <input type="submit" value="İŞ DÜZENLE" />
+                @Html.HiddenFor(a => a.Id)
+            </td>
+            </tr>
+        </table>
+
+            </div>
+            <br/><br /><br />
+            <div style="margin-left:700px">
+                <img src="~/resimler/işdüzenle.jpg"/>
+            </div>
+
+        }
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+﻿
+@{
+    Layout = null;
+}
+@model WebApplication18.Entities.İş
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>YENİ İŞ</title>
+</head>
+<body>
+    <div style="margin-left:700px"><h1>YENİ İŞ EKLEME SAYFASI</h1></div>
+
+    @using (Html.BeginForm("Add", "İş", FormMethod.Post))
+    {
+        <div style="margin-left:700px">
+            <table>
+                <tr>
+                    <td>ÜrünAdı</td>
+                    <td>
+                        @*@Html.TextBoxFor(a => a.Urunadi)*@
+                        <input type="text" class="form-control" name="urunadi" required=" " />
+                    </td>
+                </tr>
+
+
+
+
+                <tr>
+                    <td>Satış</td>
+                    <td>
+                        @Html.TextBoxFor(a => a.Satistoplam)
+                    </td>
+                </tr>
+
+
+
+
+                <tr>
+                    <td>Ücret</td>
+                    <td>
+                        @Html.TextBoxFor(a => a.Ucret)
+                    </td>
+                </tr>
+
+
+
+
+
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>
+                        <input type="submit" value="Yeni İş Ekle" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+
+    }
+
+
+
+
+</body>
+</html>

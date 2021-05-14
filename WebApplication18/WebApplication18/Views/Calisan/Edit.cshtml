@@ -1,0 +1,81 @@
+﻿
+@{
+    Layout = null;
+}
+@model WebApplication18.Entities.Calisan
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DÜZENLE</title>
+</head>
+<body>
+   
+    @using (Html.BeginForm("Edit", "Calisan", FormMethod.Post))
+    {
+
+        <div style="margin-left:700px"><h1>ÇALIŞAN DÜZENLEME SAYFASI</h1></div>
+
+
+        <div style="margin-left:700px">
+    <table>
+        <tr>
+            <td>Ad</td>
+            <td>
+                @Html.TextBoxFor(a => a.Ad)
+            </td>
+        </tr>
+
+
+
+
+        <tr>
+            <td>Soyad</td>
+            <td>
+                @Html.TextBoxFor(a => a.Soyad)
+            </td>
+        </tr>
+
+
+
+
+        <tr>
+            <td>Sifre</td>
+            <td>
+                @Html.PasswordFor(a => a.Sifre)
+            </td>
+        </tr>
+
+
+        <tr>
+            <td>Status</td>
+            <td>
+                @Html.CheckBoxFor(a => a.Status)
+            </td>
+        </tr>
+
+
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+                <input type="submit" value="Düzenle" />
+                @Html.HiddenFor(a => a.Id)
+            </td>
+            </tr>
+        </table>
+            </div>
+
+
+        }
+
+    <div style="margin-left:700px">
+        <img src="~/resimler/154-1541056_edit-edit-icon-svg-hd-png-download.png"/>
+    </div>
+
+
+
+
+</body>
+</html>
